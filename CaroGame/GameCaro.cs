@@ -129,7 +129,7 @@ namespace CaroGame
 		}
 		#endregion
 
-		#region 
+		#region Button Event
 		/// <summary>
 		/// Create New Game: Player vs Com
 		/// </summary>
@@ -158,6 +158,26 @@ namespace CaroGame
 			}
 		}
 
+		/// <summary>
+		/// Exit Action
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ExitButton_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("Do you want to Exit?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				Application.Exit();
+			}
+		}
+		#endregion
+
+		# region Tool Strip Menu Event
+		/// <summary>
+		/// Tool Strip Menu Event
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void playerXComToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("Do you want to play a new game (PvC)?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -167,7 +187,11 @@ namespace CaroGame
 			}
 		}
 
-
+		/// <summary>
+		/// Tool Strip Menu Event
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void playerXPlayerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("Do you want to play a new game (PvP)?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -177,19 +201,23 @@ namespace CaroGame
 			}
 		}
 
+		/// <summary>
+		/// Tool Strip Menu Event
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void optionPvCToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			new OptionPvC().ShowDialog();
 		}
+		#endregion
 
-		private void ExitButton_Click(object sender, EventArgs e)
-		{
-			if (MessageBox.Show("Do you want to Exit?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-			{
-				Application.Exit();
-			}
-		}
-
+		#region Mouse Click Event Action
+		/// <summary>
+		/// Mouse Event => For First Player Create
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void BoardPanel_MouseClick(object sender, MouseEventArgs e)
 		{
 			if (!_CaroChess.Ready)
@@ -215,5 +243,6 @@ namespace CaroGame
 				}
 			}
 		}
+		#endregion
 	}
 }

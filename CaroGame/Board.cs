@@ -17,15 +17,15 @@ namespace CaroGame
 		{
 			get { return _NumberOfRow; }
 		}
-
 		public int NumberofCell
 		{
 			get { return _NumberOfCell; }
 		}
 		#endregion
 
+		#region Constructor
 		/// <summary>
-		/// Create Board
+		/// Create Board Default Constructor
 		/// </summary>
 		public Board()
 		{
@@ -33,11 +33,18 @@ namespace CaroGame
 			_NumberOfCell = 0;//số cột
 		}
 
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="numberofrow">Rows</param>
+		/// <param name="numberofcell">Cells</param>
 		public Board(int numberofrow, int numberofcell)
 		{
 			_NumberOfRow = numberofrow;
 			_NumberOfCell = numberofcell;
 		}
+		#endregion
+
 		#region Draw Game Object
 		/// <summary>
 		/// Draw Board
